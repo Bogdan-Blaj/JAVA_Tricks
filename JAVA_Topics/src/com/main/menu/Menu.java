@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import com.main.exception.ErrorMessages;
+import com.main.exception.ProgramException;
 import com.main.tasks.fileWordCount.MainFileWordCount;
 
 public class Menu {
@@ -33,6 +35,9 @@ public class Menu {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+				
+				if ( option < 0 ) throw new ProgramException(ErrorMessages.INVALID_OPTION.getErrorMessage());
+
 
 				System.out.println();
 			switch(option) {
